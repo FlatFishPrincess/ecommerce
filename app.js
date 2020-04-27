@@ -5,6 +5,8 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import authRoute from './routes/auth';
 import userRoute from './routes/user';
+import categoryRoute from './routes/category';
+import productRoute from './routes/product';
 
 const app = express();
 
@@ -28,6 +30,8 @@ app.use(bodyParser.json());
 // routes
 app.use('/api', authRoute);
 app.use('/api', userRoute);
+app.use('/api', categoryRoute);
+app.use('/api', productRoute);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
